@@ -6,7 +6,7 @@ import Base from  "./Base";
 import Heading from "./Heading";
 
 const Section = props => {
-    const { label, labelId, level = 1, noHeading } = props;
+    const { level, label, labelId, noHeading } = props;
 
     const Section = styled(Base.withComponent('section'))``;
 
@@ -21,10 +21,15 @@ const Section = props => {
 };
 
 Section.propTypes = {
-    label: PropTypes.string,
-    labelId: PropTypes.string,
+    label: PropTypes.string.isRequired,
+    labelId: PropTypes.string.isRequired,
     level: PropTypes.number,
     noHeading: PropTypes.bool
 };
+
+Section.defaultProps = {
+    level: 1,
+    noHeading: false,
+}
 
 export default Section;

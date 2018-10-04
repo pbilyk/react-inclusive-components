@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const Base = styled("div")`
+  [tabindex="-1"] {
+    outline: none;
+  }
+
   ${props =>
     props.hidden &&
     `

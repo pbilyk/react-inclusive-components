@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Base from "./Base";
 
 const List = props => {
-  const { type = "ul" } = props;
+  const { type } = props;
 
   const List = styled(Base.withComponent(type))`
     &:empty {
@@ -17,6 +17,10 @@ const List = props => {
 
 List.propTypes = {
     type: PropTypes.string,
+};
+
+List.defaultProps = {
+    type: "ul",
 };
 
 export default List;

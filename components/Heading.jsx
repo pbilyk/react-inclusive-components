@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Base from "./Base";
 
 const Heading = props => {
-    const { level = "h1" } = props;
+    const { level } = props;
 
     const Heading = styled(Base.withComponent(level))``;
 
@@ -14,6 +14,10 @@ const Heading = props => {
 
 Heading.propTypes = {
     level: PropTypes.string
+}
+
+Heading.defaultProps = {
+    level: "h1"
 }
 
 export default Heading;
