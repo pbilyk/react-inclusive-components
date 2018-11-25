@@ -10,9 +10,9 @@ These components are not stateful and as abstract as possible to not interfere w
 
 Enjoy.
 
-#Usage
+# Usage
 
-##Base
+## Base
 
 Base is a building block of this library that provides basic styling. **Do not
 use it directly.**
@@ -28,7 +28,7 @@ Each component inherits from the Base the following properties:
 
 _to be expanded later_
 
-##Button
+## Button
 
 Accessible button component. Can be of several types:
 
