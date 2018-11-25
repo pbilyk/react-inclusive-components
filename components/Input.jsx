@@ -28,7 +28,7 @@ const Input = (props) => {
         label,
         id,
         labelHidden,
-        styledControl,
+        custom,
         labelPosition
     } = props;
 
@@ -39,8 +39,8 @@ const Input = (props) => {
                     {label}
                 </Label>
             )}
-            {!styledControl && <InputView {...props} />}
-            {styledControl && <Fragment><InputView hidden {...props} /><span /></Fragment>}
+            {!custom && <InputView {...props} />}
+            {custom && <Fragment><InputView hidden {...props} /><span className="input-custom-element" /></Fragment>}
             {labelPosition === 'after' && (
                 <Label htmlFor={id} hidden={labelHidden}>
                     {label}
@@ -56,7 +56,7 @@ Input.propTypes = {
     placeholder: PropTypes.string,
     type: PropTypes.string,
     labelPosition: PropTypes.string,
-    styledControl: PropTypes.bool,
+    custom: PropTypes.bool,
     labelHidden: PropTypes.bool,
 };
 
@@ -64,8 +64,7 @@ Input.defaultProps = {
     placeholder: "",
     type: "text",
     labelPosition: "before",
-    styledControl: false,
-    onChange:  () => {},
+    custom: false,
 }
 
 export default Input;
