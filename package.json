@@ -1,5 +1,5 @@
 {
-  "name": "react-inclusive-components",
+  "name": "@pbilyk/react-inclusive-components",
   "version": "1.0.0",
   "description": "Inclusive components for React, created with styled-components. Based on Heydon Pickering's book, Inclusive Components",
   "main": "index.js",
