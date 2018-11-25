@@ -1,11 +1,8 @@
 {
   "name": "react-inclusive-components",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Inclusive components for React, created with styled-components. Based on Heydon Pickering's book, Inclusive Components",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Pavlo Bilyk",
   "license": "ISC",
   "dependencies": {
