@@ -12,7 +12,7 @@ const Section = props => {
 
     return (
         <Section aria-labelledby={labelId} {...props}>
-            <Heading id={labelId} level={`h${level}`} hidden={noHeading}>
+            <Heading id={labelId} element={`h${level}`} hidden={noHeading}>
                 {label}
             </Heading>
             {props.children}
