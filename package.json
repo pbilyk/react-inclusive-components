@@ -1,16 +1,19 @@
 {
   "name": "react-inclusive-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Inclusive components for React, created with styled-components. Based on Heydon Pickering's book, Inclusive Components",
   "main": "index.js",
   "author": "Pavlo Bilyk",
   "license": "ISC",
   "devDependencies": {
-    "prop-types": "^15.6.2",
-    "styled-components": "^3.4.9",
-    "@babel/core": "^7.1.6",
     "@babel/cli": "^7.1.5",
-    "@babel/plugin-transform-react-jsx": "^7.1.6"
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-transform-react-jsx": "^7.1.6",
+    "prop-types": "^15.6.2",
+    "styled-components": "^3.4.9"
+  },
+  "peerDependencies": {
+    "react": "^16.6.3"
   },
   "scripts": {
     "build": "babel src -d lib"
