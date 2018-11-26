@@ -23,7 +23,7 @@ const Section = props => {
 Section.propTypes = {
     label: PropTypes.string.isRequired,
     labelId: PropTypes.string.isRequired,
-    level: PropTypes.number,
+    level: PropTypes.string,
     noHeading: PropTypes.bool
 };
 
