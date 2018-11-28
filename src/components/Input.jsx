@@ -29,21 +29,22 @@ const Input = (props) => {
         id,
         labelHidden,
         custom,
-        customClassName
+        customClassName,
+        labelClassName,
         labelPosition
     } = props;
 
     return (
         <Fragment>
             {labelPosition === 'before' && (
-                <Label htmlFor={id} hidden={labelHidden}>
+                <Label className={`${labelClassName ? labelClassName : ''}`} htmlFor={id} hidden={labelHidden}>
                     {label}
                 </Label>
             )}
             {!custom && <InputView {...props} />}
             {custom && <Fragment><InputView hidden {...props} /><span className={`input-custom-element ${customClassName ? customClassName : ''}`} /></Fragment>}
             {labelPosition === 'after' && (
-                <Label htmlFor={id} hidden={labelHidden}>
+                <Label className={`${labelClassName ? labelClassName : ''}`} htmlFor={id} hidden={labelHidden}>
                     {label}
                 </Label>
             )}
@@ -59,6 +60,7 @@ Input.propTypes = {
     labelPosition: PropTypes.string,
     custom: PropTypes.bool,
     customClassName: PropTypes.string,
+    labelClassName: PropTypes.string,
     labelHidden: PropTypes.bool,
 };
 
