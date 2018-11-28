@@ -140,6 +140,8 @@ Receives the following props:
 * `type: String`: `Input type`,
 * `labelPosition: String`: `before|after — Determines the label placement related to the <input> element`,
 * `custom: Boolean`: `If set to TRUE, will render the hidden input with the span for applying custom styles. The span will have the "input-custom-element" class name for styling`
+* `customClassname: String`: `The external classname for styling the custom radio buttons and checboxes`
+* `labelClassName: String`: `The external classname for styling the labels`
 * `labelHidden: Boolean`: `If set to TRUE, will hide the label element from the view`
 
 Default Props are
