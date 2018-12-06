@@ -8,16 +8,14 @@
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
-    "@babel/plugin-transform-react-jsx": "^7.1.6"
-  },
-  "dependencies": {
-    "prop-types": "^15.6.2",
-    "styled-components": "^4.1.1"
+    "@babel/plugin-transform-react-jsx": "^7.1.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0"
   },
   "peerDependencies": {
-    "react": "^16.6.3"
+    "react": "^16.6.3",
+    "prop-types": "^15.6.2"
   },
   "scripts": {
-    "build": "babel src -d lib"
+    "build": "babel src -d lib && cp -a   ./src/styles ./lib/styles"
   }
 }

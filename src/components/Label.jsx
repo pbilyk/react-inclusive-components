@@ -1,6 +1,19 @@
-import styled from "styled-components";
-import Base from "./Base";
+import React from "react";
+import PropTypes from "prop-types";
 
-const Label = styled(Base.withComponent('label'))``;
+const Label = props => {
+  const { hidden, className= "", ...rest } = props;
 
-export default Label
+  return (
+    <label
+      {...rest}
+      className={hidden ? `ric-hidden ${className}` : className}
+    />
+  );
+};
+
+Label.propTypes = {
+  hidden: PropTypes.bool
+};
+
+export default Label;

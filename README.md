@@ -4,29 +4,16 @@ Inclusive components for React, created with styled-components. Based on Heydon
 Pickering's book, **Inclusive Components**.
 
 The library does not include React, it's just a collection of components to make the development of accessible apps easeir.
-It has a minimum styling using styled components that ensures that these elements are behaving properly and avoid different pitfalls (e.g. hiding an element from user but still making it accessible by the screen reader).
+
+It has a minimum stylings that ensures that these elements are behaving properly and avoid different pitfalls (e.g. hiding an element from user but still making it accessible by the screen reader).
 
 These components are not stateful and as abstract as possible to not interfere with any development that you are doing.
+
+You can submit issues or Pull Requests at the [GitHub repo](https://github.com/pbilyk/react-inclusive-components).
 
 Enjoy.
 
 # Usage
-
-## Base
-
-Base is a building block of this library that provides basic styling. **Do not
-use it directly.**
-
-Each component inherits from the Base the following props:
-
-* `hidden: Boolean`: `Makes the component invisible on page but still accessible by
-  screen readers`.
-
-```js
-<Button hidden />;
-```
-
-_to be expanded later_
 
 ## Button
 
@@ -59,8 +46,6 @@ Default props are the following:
   checked: false
 }
 ```
-Has access to the `<Base>` component features and styles.
-
 ## Heading
 
 A heading element. Receives the following props:
@@ -68,8 +53,6 @@ A heading element. Receives the following props:
 * `element: String`: `Responsilble for rendering the appropriate element(e.g. <Heading element="h1" /> will render the h1 element)`
 
 Default value is for `element` prop is `h1`
-
-Has access to the `<Base>` component features and styles.
 
 ## Section
 
@@ -90,8 +73,6 @@ Default props are:
     noHeading: false,
 }
 ```
-Has access to the `<Base>` component features and styles.
-
 ## List
 
 A list element that is hidden and inacessible, when empty.
@@ -107,8 +88,6 @@ Default props are:
     type: "ul",
 }
 ```
-Has access to the `<Base>` component features and styles.
-
 ## Fieldset
 
 A fieldset component for grouping inputs within forms.
@@ -125,8 +104,6 @@ Default Props are:
     hideLegend: false
 }
 ```
-
-Has access to the `<Base>` component features and styles.
 
 ## Input
 
@@ -155,8 +132,6 @@ Default Props are
 }
 ```
 
-Has access to the `<Base>` component features and styles.
-
 ## Label
 
 A simple `<label>` element with access to the `<Base>` component features and styles.
@@ -165,5 +140,3 @@ A simple `<label>` element with access to the `<Base>` component features and st
 
 Renders the `<div>` with `aria-live="polite" role="status"`. Can wrap any component and content.
 Used for screen readers to track for content changes within it, and announce them. 
-
-Has access to the `<Base>` component features and styles.

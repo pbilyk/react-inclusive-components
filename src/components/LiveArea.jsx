@@ -1,13 +1,21 @@
-import React from 'react';
-import styled from "styled-components";
-import Base from "./Base";
+import React from "react";
+import PropTypes from "prop-types";
 
 const LiveArea = props => {
-  const Area = styled(Base)``;
+  const { hidden, className= "", ...rest } = props;
 
   return (
-    <Area aria-live="polite" role="status" {...props}/>
+    <div
+      aria-live="polite"
+      role="status"
+      className={hidden ? `ric-hidden ${className}` : className}
+      {...rest}
+    />
   );
+};
+
+LiveArea.propTypes = {
+  hidden: PropTypes.bool
 };
 
 export default LiveArea;

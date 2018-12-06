@@ -1,53 +1,76 @@
 import React, { Fragment } from "react";
-import styled from "styled-components";
-import Base from "./Base";
 import PropTypes from "prop-types";
 
+import "../styles/styles.css";
+
 const Button = props => {
-  const Button = styled(Base.withComponent("button"))`
-    &[aria-pressed]:focus {
-      outline: none;
-    }
+  const {
+    type,
+    hidden,
+    pressed,
+    checked,
+    onText,
+    offText,
+    classNameToggleActive,
+    classNameToggleInActive,
+    className= "",
+    labelId,
+    ...rest
+  } = props;
 
-    &[aria-pressed="true"]:focus {
-      outline: 2px solid transparent;
-    }
-  `;
-
-  if (props.type === "toggle") {
-    return <Button aria-pressed={props.pressed} {...props} />;
-  }
-
-  if (props.type === "toggle-dynamic") {
+  if (type === "toggle") {
     return (
-      <Fragment>
-        <Button
-          aria-labelledby={props.labelId ? props.labelId : null}
-          aria-checked={props.checked}
-          {...props}
-        />
-      </Fragment>
+      <button
+        {...rest}
+        className={hidden ? `ric-hidden ${className}` : className}
+        aria-pressed={pressed}
+      />
     );
   }
 
-  if (props.type === "switch") {
+  if (type === "toggle-dynamic") {
     return (
-      <Button role="switch" aria-checked={props.checked} aria-labelledby={props.labelId ? props.labelId : null}>
-        <span className="button-switch-on">{props.onText}</span>
-        <span className="button-switch-off">{props.offText}</span>
-      </Button>
+      <button
+        {...rest}
+        className={hidden ? `ric-hidden ${className}` : className}
+        aria-labelledby={labelId ? labelId : null}
+        aria-checked={checked}
+      />
     );
   }
 
-  return <Button {...props} />;
+  if (type === "switch") {
+    return (
+      <button
+        {...rest}
+        className={hidden ? `ric-hidden ${className}` : className}
+        role="switch"
+        aria-checked={checked}
+        aria-labelledby={labelId ? labelId : null}
+      >
+        <span className={classNameToggleActive}>{onText}</span>
+        <span className={classNameToggleInActive}>{offText}</span>
+      </button>
+    );
+  }
+
+  return (
+    <button
+      {...rest}
+      className={hidden ? `ric-hidden ${className}` : className}
+    />
+  );
 };
 
 Button.propTypes = {
+  hidden: PropTypes.bool,
   type: PropTypes.string,
   pressed: PropTypes.bool,
   checked: PropTypes.bool,
   onText: PropTypes.string,
   offText: PropTypes.string,
+  classNameToggleActive: PropTypes.string,
+  classNameToggleInActive: PropTypes.string,
   labelId: PropTypes.string
 };
 

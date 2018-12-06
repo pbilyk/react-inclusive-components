@@ -1,30 +1,37 @@
 import React from "react";
-import styled from "styled-components";
 import PropTypes from "prop-types";
-import Base from "./Base";
+
+import "../styles/styles.css";
 
 const Fieldset = props => {
-    const { legend, hideLegend } = props;
+  const {
+    legend,
+    hideLegend,
+    children,
+    hidden,
+    className= "",
+    ...rest
+  } = props;
 
-    const Fieldset = styled(Base.withComponent('fieldset'))``;
-
-    return (
-        <Fieldset {...props}>
-            <legend hidden={hideLegend}>
-                {legend}
-            </legend>
-            {props.children}
-        </Fieldset>
-    );
+  return (
+    <fieldset
+      {...rest}
+      className={hidden ? `ric-hidden ${className}` : className}
+    >
+      <legend hidden={hideLegend}>{legend}</legend>
+      {children}
+    </fieldset>
+  );
 };
 
 Fieldset.propTypes = {
-    legend: PropTypes.string.isRequired,
-    hideLegend: PropTypes.bool
+  hidden: PropTypes.bool,
+  legend: PropTypes.string.isRequired,
+  hideLegend: PropTypes.bool
 };
 
 Fieldset.defaultProps = {
-    hideLegend: false
+  hideLegend: false
 };
 
 export default Fieldset;

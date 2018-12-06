@@ -1,23 +1,28 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import styled from "styled-components";
-import Base from "./Base";
+import PropTypes from "prop-types";
+
+import "../styles/styles.css";
 
 const Heading = props => {
-    const { element } = props;
+  const { element, className = "", hidden, ...rest } = props;
 
-    const Heading = styled(Base.withComponent(element))``;
+  const Element = element;
 
-    return <Heading {...props}/>
+  return (
+    <Element
+      className={hidden ? `ric-hidden ${className}` : className}
+      {...rest}
+    />
+  );
 };
 
-
 Heading.propTypes = {
-    level: PropTypes.string
-}
+  hidden: PropTypes.bool,
+  element: PropTypes.string
+};
 
 Heading.defaultProps = {
-    element: "h1"
-}
+  element: "h1"
+};
 
 export default Heading;

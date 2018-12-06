@@ -1,26 +1,25 @@
-import React from 'react';
-import styled from "styled-components";
+import React from "react";
 import PropTypes from "prop-types";
-import Base from "./Base";
 
 const List = props => {
-  const { type } = props;
+  const { type, hidden, className = "", ...rest } = props;
 
-  const List = styled(Base.withComponent(type))`
-    &:empty {
-      display: none !important;
-    }
-  `;
+  const Element = type;
 
-  return <List {...props} />
+  const listClassname = props.hidden
+    ? `ric-hidden ric-list ${className}`
+    : className;
+
+  return <Element className={listClassname} {...rest} />;
 };
 
 List.propTypes = {
-    type: PropTypes.string,
+  hidden: PropTypes.bool,
+  type: PropTypes.string
 };
 
 List.defaultProps = {
-    type: "ul",
+  type: "ul"
 };
 
 export default List;

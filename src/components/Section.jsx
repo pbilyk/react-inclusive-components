@@ -1,26 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-
-import Base from "./Base";
 import Heading from "./Heading";
 
 const Section = props => {
-  const { level, label, labelId, noHeading } = props;
-
-  const Section = styled(Base.withComponent("section"))``;
+  const {
+    level,
+    label,
+    labelId,
+    noHeading,
+    className= "",
+    hidden,
+    ...rest
+  } = props;
 
   return (
-    <Section aria-labelledby={labelId} {...props}>
-      <Heading id={labelId} element={`h${level}`} hidden={noHeading}>
+    <section aria-labelledby={labelId} className={hidden ? "ric-hidden" : className} {...rest}>
+      <Heading id={labelId} element={`h${level}`} className={noHeading ? "ric-hidden" : ""}>
         {label}
       </Heading>
       {props.children}
-    </Section>
+    </section>
   );
 };
 
 Section.propTypes = {
+  hidden: PropTypes.bool,
   label: PropTypes.string.isRequired,
   labelId: PropTypes.string.isRequired,
   level: PropTypes.string,
