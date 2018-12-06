@@ -27,7 +27,7 @@ Accessible button component. Can be of several types:
 * **toggle-dynamic** — A toggle button for handling the alternating state of various
   interface elements. Adds the `label` element that can display the current state of the  button (e.g Play/Pause button)
 * **switch** — A switcher button that has on-off texts (e.g menu tumblers). Provides CSS class `button-switch-on` and `button-switch-off` for styling.
-
+    
 Button component receives the following props:
 
 * `type: String`: `submit|button|toggle-dynamic|toggle|switch`
@@ -36,6 +36,8 @@ Button component receives the following props:
 * `labelId: String`: `The id of the label you use for the button. Will apply to the aria-labeledby attribute on the button`
 * `onText: String`: `Text of the ON value for the switch button`
 * `offText: String`: `Text of the OFF value for the switch button`
+* `classNameToggleActive:String`: `The classname for styling the active half of the switch button`.
+* `classNameToggleInActive:String`: `The classname for styling the inactive half of the switch button`.
 
 Default props are the following:  
 
