@@ -1,6 +1,6 @@
 {
   "name": "react-inclusive-components",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Inclusive components for React, created with styled-components. Based on Heydon Pickering's book, Inclusive Components",
   "main": "index.js",
   "author": "Pavlo Bilyk",
