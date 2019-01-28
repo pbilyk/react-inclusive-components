@@ -6,5 +6,16 @@ import Input from "./components/Input";
 import LiveArea from "./components/LiveArea";
 import Fieldset from "./components/Fieldset";
 import Button from "./components/Button";
+import TextArea from "./components/TextArea";
 
-export { Heading, Section, List, Label, Input, LiveArea, Fieldset, Button };
+export {
+  Heading,
+  Section,
+  List,
+  Label,
+  Input,
+  LiveArea,
+  Fieldset,
+  Button,
+  TextArea
+};
