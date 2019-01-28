@@ -1,5 +1,3 @@
-import TextArea from "./src/components/TextArea";
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
