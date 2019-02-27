@@ -13,7 +13,7 @@ const Button = props => {
     offText,
     classNameToggleActive,
     classNameToggleInActive,
-    className= "",
+    className = "",
     labelId,
     ...rest
   } = props;
@@ -22,6 +22,7 @@ const Button = props => {
     return (
       <button
         {...rest}
+        type="button"
         className={hidden ? `ric-hidden ${className}` : className}
         aria-pressed={pressed}
       />
@@ -32,6 +33,7 @@ const Button = props => {
     return (
       <button
         {...rest}
+        type="button"
         className={hidden ? `ric-hidden ${className}` : className}
         aria-labelledby={labelId ? labelId : null}
         aria-checked={checked}
@@ -43,6 +45,7 @@ const Button = props => {
     return (
       <button
         {...rest}
+        type="button"
         className={hidden ? `ric-hidden ${className}` : className}
         role="switch"
         aria-checked={checked}
@@ -57,6 +60,7 @@ const Button = props => {
   return (
     <button
       {...rest}
+      type={type}
       className={hidden ? `ric-hidden ${className}` : className}
     />
   );

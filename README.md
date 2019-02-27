@@ -161,7 +161,7 @@ Default Props are
 
 ## Label
 
-A simple `<label>` element with access to the `<Base>` component features and styles.
+A simple `<label>` element.
 
 ## LiveArea
 
